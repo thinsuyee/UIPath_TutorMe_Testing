@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SignIn" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1283.33333333333,2458" sap2010:WorkflowViewState.IdRef="SignIn_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SignIn" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="returnSubject" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>643.333333333333,2459.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SignIn_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
       <x:String>System.Activities</x:String>
@@ -68,9 +76,15 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SignIn" sap:VirtualizedContainerService.HintSize="576,2393.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SignIn" sap:VirtualizedContainerService.HintSize="576,2394.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="emailAddress" />
       <Variable x:TypeArguments="x:String" Default="password123" Name="password" />
@@ -81,13 +95,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Create Next App" sap:VirtualizedContainerService.HintSize="534,2199.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="df69be8f-8b8f-47b2-b09a-9dc31ba59f23" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Create Next App" sap:VirtualizedContainerService.HintSize="534,2200.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="df69be8f-8b8f-47b2-b09a-9dc31ba59f23" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1981.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1982.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +192,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="http://localhost:3000/tutors-list?subject=Biology" DesignTimeRectangle="565, 404, 137, 40" ElementType="Text" FriendlyName="'Biology'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='3' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' /&gt;" Guid="2db27d65-636b-4979-aa7a-adc38b5e92a7" InformativeScreenshot="aa56f2b8c46c1628885ce2c9baf01c20.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Next App' /&gt;" SearchSteps="FuzzySelector">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target DesignTimeRectangle="565, 328, 137, 76" ElementType="Text" FriendlyName="'Subject'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Subject' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Subject' tag='TH' type='' check:text='Subject' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
